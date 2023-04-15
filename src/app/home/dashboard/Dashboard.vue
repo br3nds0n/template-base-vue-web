@@ -1,5 +1,4 @@
 <script>
-import ProductService from '@/service/ProductService';
 export default {
     data() {
         return {
@@ -29,10 +28,6 @@ export default {
                 ]
             }
         };
-    },
-    mounted() {
-        const productService = new ProductService();
-        productService.getProductsSmall().then((data) => (this.products.value = data));
     }
 };
 </script>

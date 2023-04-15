@@ -104,6 +104,7 @@ import VirtualScroller from 'primevue/virtualscroller';
 import CodeHighlight from '@/components/CodeHighlight.vue';
 import BlockViewer from '@/components/BlockViewer.vue';
 import Loading from '@/components/Loading.vue';
+import Construcao from '@/views/Construcao.vue';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -177,6 +178,7 @@ app.component('font-awesome-layers-text', FontAwesomeLayersText);
 
 // components app
 app.component('Loading', Loading);
+app.component('Construcao', Construcao);
 
 // components primevue
 app.component('Accordion', Accordion);

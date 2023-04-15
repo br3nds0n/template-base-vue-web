@@ -19,17 +19,17 @@ const model = ref([
             {
                 label: 'Error',
                 icon: 'pi pi-fw pi-times-circle',
-                to: '/auth/error'
+                to: '/error'
             },
             {
                 label: 'Access Denied',
                 icon: 'pi pi-fw pi-lock',
-                to: '/auth/access'
+                to: '/access'
             },
             {
                 label: 'Not Found',
                 icon: 'pi pi-fw pi-exclamation-circle',
-                to: '/pages/notfound'
+                to: '/notfound'
             }
         ]
     }

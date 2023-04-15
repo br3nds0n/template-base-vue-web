@@ -1,7 +1,3 @@
-<script setup>
-import AppConfig from '@/layout/AppConfig.vue';
-</script>
-
 <template>
     <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
         <div class="flex flex-column align-items-center justify-content-center">
@@ -17,12 +13,11 @@ import AppConfig from '@/layout/AppConfig.vue';
                         <img src="/demo/images/access/asset-access.svg" alt="Access denied" class="mb-5" width="80%" />
                         <div class="col-12 mt-5 text-center">
                             <i class="pi pi-fw pi-arrow-left text-blue-500 mr-2" style="vertical-align: center"></i>
-                            <router-link to="/" class="text-blue-500">Go to Dashboard</router-link>
+                            <router-link to="/" class="text-blue-500">Ir para a Dashboard</router-link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <AppConfig simple />
 </template>

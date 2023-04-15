@@ -102,13 +102,60 @@ import VirtualScroller from 'primevue/virtualscroller';
 
 import CodeHighlight from '@/components/CodeHighlight.vue';
 import BlockViewer from '@/components/BlockViewer.vue';
+import Loading from '@/components/Loading.vue';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+import { FontAwesomeIcon, FontAwesomeLayers, FontAwesomeLayersText } from '@fortawesome/vue-fontawesome';
+
+library.add(fas);
 
 import '@/assets/styles.scss';
 
 const app = createApp(App);
 
+// app config
+app.use(PrimeVue, {
+    locale: {
+        startsWith: 'Começa com',
+        contains: 'Contem',
+        notContains: 'Não contem',
+        endsWith: 'Termina com',
+        equals: 'Igual',
+        notEquals: 'Não é igual',
+        noFilter: 'Sem filtro',
+        lt: 'Menor que',
+        lte: 'Menor que ou igual a',
+        gt: 'Maior que',
+        gte: 'Maior que ou igua a',
+        dateIs: 'Date é',
+        dateIsNot: 'Data não é',
+        dateBefore: 'Data é antes',
+        dateAfter: 'Data é depois',
+        clear: 'Limpar',
+        apply: 'Aplicar',
+        matchAll: 'Combinar tudo',
+        matchAny: 'Corresponder a qualquer',
+        addRule: 'Adicionar regra',
+        removeRule: 'Remover regra',
+        accept: 'Sim',
+        reject: 'Não',
+        dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+        dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
+        dayNamesMin: ['Do', 'Se', 'Te', 'Qu', 'Qu', 'Se', 'Sa'],
+        monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+        monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        today: 'Hoje',
+        weekHeader: 'Semana',
+        firstDayOfWeek: 0,
+        dateFormat: 'dd/mm/yy'
+    },
+    ripple: true,
+    inputStyle: 'outlined'
+});
+
 app.use(router);
-app.use(PrimeVue, { ripple: true });
 app.use(ToastService);
 app.use(DialogService);
 app.use(ConfirmationService);
@@ -121,6 +168,15 @@ app.directive('styleclass', StyleClass);
 app.component('CodeHighlight', CodeHighlight);
 app.component('BlockViewer', BlockViewer);
 
+// components awesome
+app.component('font-awesome-icon', FontAwesomeIcon);
+app.component('font-awesome-layers', FontAwesomeLayers);
+app.component('font-awesome-layers-text', FontAwesomeLayersText);
+
+// components app
+app.component('Loading', Loading);
+
+// components primevue
 app.component('Accordion', Accordion);
 app.component('AccordionTab', AccordionTab);
 app.component('AutoComplete', AutoComplete);

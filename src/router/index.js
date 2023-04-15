@@ -22,12 +22,12 @@ const router = createRouter({
             component: () => import('@/views/NotFound.vue')
         },
         {
-            path: '/auth/access',
+            path: '/access',
             name: 'accessDenied',
             component: () => import('@/views/Access.vue')
         },
         {
-            path: '/auth/error',
+            path: '/error',
             name: 'error',
             component: () => import('@/views/Error.vue')
         }

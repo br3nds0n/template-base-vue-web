@@ -54,7 +54,7 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 |                                                                   logo                                                                   |                Framework                | Version  |
 | :--------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------: | :------: |
 |                                   <img height="35" width="40" src="https://skillicons.dev/icons?i=js">                                   | [Javascipt](https://www.javascript.com) | `4.0.0`  |
-|                                 <img height="35" width="40" src="https://skillicons.dev/icons?i=nodejs">                                 |    [NodeJS](https://nodejs.org/en/)     | `16.0.0` |
+|                                 <img height="35" width="40" src="https://skillicons.dev/icons?i=nodejs">                                 |    [Node.Js](https://nodejs.org/en/)     | `16.0.0` |
 |                                  <img height="35" width="40" src="https://skillicons.dev/icons?i=vue">                                   |       [Vue.Js](https://vuejs.org)       | `3.0.0`  |
 |                                  <img height="35" width="40" src="https://skillicons.dev/icons?i=vite">                                  |       [Vite](https://vitejs.dev)        | `4.2.1`  |
 | <img height="35" width="40" src="https://user-images.githubusercontent.com/82064724/193477002-97b5453f-bd92-43c0-aea1-e53c163dcec3.png"> |   [PrimeVue](https://www.docker.com/)   | `3.17.0` |
@@ -83,4 +83,4 @@ As seguintes ferramentas/tecnologias foram usadas na construção e teste do pro
 
 <br> 
 	
-[[ ↑ voltar ]](#-readme-)
+[[ ↑ voltar ]](#-template-base-web)

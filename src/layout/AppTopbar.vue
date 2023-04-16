@@ -1,58 +1,58 @@
-<script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+<script>
 import { useLayout } from '@/layout/composables/layout';
-import { useRouter } from 'vue-router';
-
 const { onMenuToggle } = useLayout();
 
-const outsideClickListener = ref(null);
-const topbarMenuActive = ref(false);
-const router = useRouter();
-
-onMounted(() => {
-    bindOutsideClickListener();
-});
-
-onBeforeUnmount(() => {
-    unbindOutsideClickListener();
-});
-
-const onTopBarMenuButton = () => {
-    topbarMenuActive.value = !topbarMenuActive.value;
-};
-const onSettingsClick = () => {
-    topbarMenuActive.value = false;
-    router.push('/documentation');
-};
-const topbarMenuClasses = computed(() => {
-    return {
-        'layout-topbar-menu-mobile-active': topbarMenuActive.value
-    };
-});
-
-const bindOutsideClickListener = () => {
-    if (!outsideClickListener.value) {
-        outsideClickListener.value = (event) => {
-            if (isOutsideClicked(event)) {
-                topbarMenuActive.value = false;
-            }
+export default {
+    data() {
+        return {
+            outsideClickListener: { value: null },
+            topbarMenuActive: { value: false }
         };
-        document.addEventListener('click', outsideClickListener.value);
-    }
-};
-const unbindOutsideClickListener = () => {
-    if (outsideClickListener.value) {
-        document.removeEventListener('click', outsideClickListener);
-        outsideClickListener.value = null;
-    }
-};
-const isOutsideClicked = (event) => {
-    if (!topbarMenuActive.value) return;
+    },
+    mounted() {
+        this.bindOutsideClickListener();
+    },
+    beforeMount() {
+        this.unbindOutsideClickListener();
+    },
+    computed: {
+        topbarMenuClasses() {
+            return { 'layout-topbar-menu-mobile-active': this.topbarMenuActive.value };
+        }
+    },
+    methods: {
+        onTopBarMenuButton() {
+            this.topbarMenuActive.value = !this.topbarMenuActive.value;
+        },
+        onMenuToggle() {
+            onMenuToggle();
+        },
 
-    const sidebarEl = document.querySelector('.layout-topbar-menu');
-    const topbarEl = document.querySelector('.layout-topbar-menu-button');
+        bindOutsideClickListener() {
+            if (!this.outsideClickListener.value) {
+                this.outsideClickListener.value = (event) => {
+                    if (this.isOutsideClicked(event)) {
+                        this.topbarMenuActive.value = false;
+                    }
+                };
+                document.addEventListener('click', this.outsideClickListener.value);
+            }
+        },
+        unbindOutsideClickListener() {
+            if (this.outsideClickListener.value) {
+                document.removeEventListener('click', this.outsideClickListener);
+                this.outsideClickListener.value = null;
+            }
+        },
+        isOutsideClicked(event) {
+            if (!this.topbarMenuActive.value) return;
 
-    return !(sidebarEl.isSameNode(event.target) || sidebarEl.contains(event.target) || topbarEl.isSameNode(event.target) || topbarEl.contains(event.target));
+            const sidebarEl = document.querySelector('.layout-topbar-menu');
+            const topbarEl = document.querySelector('.layout-topbar-menu-button');
+
+            return !(sidebarEl.isSameNode(event.target) || sidebarEl.contains(event.target) || topbarEl.isSameNode(event.target) || topbarEl.contains(event.target));
+        }
+    }
 };
 </script>
 
@@ -69,18 +69,16 @@ const isOutsideClicked = (event) => {
         <div class="layout-topbar-menu" :class="topbarMenuClasses">
             <Button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
                 <i v-badge="2" class="pi pi-bell p-overlay-badge" />
-                <span>Calendar</span>
+                <span class="span">Notificação</span>
             </Button>
             <button @click="onTopBarMenuButton()" class="p-link layout-topbar-button">
                 <i class="pi pi-user"></i>
-                <span>Profile</span>
+                <span class="span">Perfil</span>
             </button>
-            <button @click="onSettingsClick()" class="p-link layout-topbar-button">
+            <button class="p-link layout-topbar-button">
                 <i class="pi pi-cog"></i>
-                <span>Settings</span>
+                <span class="span">Configurações</span>
             </button>
         </div>
     </div>
 </template>
-
-<style lang="scss" scoped></style>

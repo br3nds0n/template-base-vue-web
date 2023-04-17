@@ -21,10 +21,10 @@ Antes de começar, você precisará ter as seguintes ferramentas instaladas em s
 
 ```php
 # clonar este repositório
-$ git clone
+$ git clone https://github.com/br3nds0n/template-base-vue-web.git
 
 # acesse a pasta do projeto
-$ cd
+$ cd template-base-vue-web
 
 # instale as dependências
 $ npm install

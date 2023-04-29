@@ -13,6 +13,11 @@ const router = createRouter({
             children: [...appRotas]
         },
         {
+            path: '/login',
+            name: 'login',
+            component: () => import('@/app/auth/Login.vue')
+        },
+        {
             path: '/landing',
             name: 'landing',
             component: () => import('@/views/page/Landing.vue')

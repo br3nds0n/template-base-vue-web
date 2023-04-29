@@ -17,6 +17,11 @@ const model = ref([
                 to: '/landing'
             },
             {
+                label: 'Login',
+                icon: 'pi pi-user',
+                to: '/login'
+            },
+            {
                 label: 'Error',
                 icon: 'pi pi-fw pi-times-circle',
                 to: '/error'

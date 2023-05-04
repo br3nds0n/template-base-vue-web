@@ -81,9 +81,9 @@ export default {
             <div class="overlay-container">
                 <div class="overlay">
                     <!-- ⚠️ adicionar imagem -->
-                    <!-- <div class="overlay-panel overlay-right">
-                        <img class="img" src="../../assets/images/logo-removebg-preview.png" />
-                    </div> -->
+                    <div class="overlay-panel overlay-right">
+                        <img src="/demo/images/login/login.png" alt="login" class="img-login" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,8 +91,6 @@ export default {
 </template>
 
 <style>
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800'); */
-
 .body {
     background: #f6f5f7;
     display: flex;
@@ -121,6 +119,10 @@ export default {
     text-transform: uppercase;
     transition: transform 80ms ease-in;
     cursor: pointer;
+}
+
+.img-login {
+    width: 37rem;
 }
 
 .google-sign-in-button {

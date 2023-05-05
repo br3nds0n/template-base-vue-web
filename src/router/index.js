@@ -53,7 +53,7 @@ trackRouter(router);
  */
 
 router.beforeEach((to, from, next) => {
-    const pathPublicos = ['/', '/login', '/cadastrar', '/landing'];
+    const pathPublicos = ['/login', '/cadastrar', '/landing'];
     const authPath = !pathPublicos.includes(to.path);
 
     const isAuthenticated = localStorage.getItem('token');
@@ -61,7 +61,7 @@ router.beforeEach((to, from, next) => {
         next();
     } else {
         if (isAuthenticated == null) {
-            next('/landing');
+            next('/login');
         } else {
             next();
         }

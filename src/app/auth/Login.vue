@@ -34,8 +34,8 @@ export default {
             loginService
                 .login(credenciais)
                 .then((res) => {
-                    if (res.data.token != null) {
-                        localStorage.setItem('token', res.data.token);
+                    if (res.data.accessToken != null) {
+                        localStorage.setItem('token', res.data.accessToken);
                         this.$router.push('/');
                     }
                     this.$store.dispatch('removeRequest');

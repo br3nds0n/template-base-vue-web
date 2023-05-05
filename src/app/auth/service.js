@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const urlBase = 'http://localhost:3000/api/login';
+const urlBase = 'http://localhost:8080/auth/login';
 
 export const loginService = {
     login(credenciais) {
